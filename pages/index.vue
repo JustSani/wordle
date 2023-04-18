@@ -10,9 +10,11 @@
         </v-card-subtitle>
         <v-card-text>
           <!-- TODO: sostituire con un componente dedicato denominato Guess -->
-          <div class="guess">
+          <Guess :guess="guess"/>
+
+          <!--div class="guess">
             <Char v-for="(char,i) in characters" :key="i" :char="char" />
-          </div>
+          </div-->
           <!-- END TODO -->
           <Input @guess="handleGuess"/>
         </v-card-text>
@@ -32,7 +34,7 @@
 export default {
   data: () => ({
     // TODO: adattare lo stato per il nuovo componente Guess.vue
-    characters: ['', '', '', '', ''],
+    guess:''
   }),
 
   computed: {
@@ -41,6 +43,7 @@ export default {
   methods: {
     handleGuess(guess) {
       // TODO: passare "guess" come prop al nuovo componente Guess.vue
+      this.guess = guess;
     },
   }
 }

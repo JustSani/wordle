@@ -1,6 +1,8 @@
 <template>
   <!-- TODO: usare il componente Char per mostrare i singoli caratteri della prop guess utilizzando la variabile computed characters -->
-  <div></div>
+  <div>
+    <Char v-for="(char,i) in characters" :key="i" :char="char" />
+  </div>
 </template>
 <script>
 export default {
@@ -15,8 +17,13 @@ export default {
       // TODO: restituire un array contenente di caratteri di this.guess
       // es: PESCA => ['P', 'E', 'S', 'C', 'A']
       // TODO: se this.guess è vuoto, restituire un array di 5 stringhe vuote
+      if(this.guess.length != 0)
+        return this.guess.split('')
+      else
+        return ['','','','','']
 
-      return ['a', 'b', 'c', 'd', 'e']
+        
+      //return ['a', 'b', 'c', 'd', 'e']
     },
   }
 }
