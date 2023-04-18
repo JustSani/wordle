@@ -25,6 +25,8 @@ export default {
   }),
   fetch() {
     // TODO: utilizzare il metodo getRandomWord() per recuperare la parola corretta
+    this.word = getRandomWord()
+    console.log(this.word)
   },
   methods: {
     handleGuess(guess) {

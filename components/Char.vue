@@ -16,10 +16,19 @@ export default {
       required: true,
     },
     // TODO aggiungere la prop state
+    state: {
+      type: String,
+      required: true,
+    }
   },
   computed: {
     color() {
       // TODO restituire il colore in base allo stato
+      if(this.state == STATE_CORRECT)
+        return 'green'
+      else if(this.state == STATE_PRESENT)
+        return 'yellow'
+
       return undefined
     },
   },
