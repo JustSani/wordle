@@ -22,7 +22,19 @@ export default {
 
       // TIP: valorizzando this.error con un messaggio di errore questo verrà mostrato nella text field
 
-      return true
+      if(this.guess.length != 5){
+        this.error = "Lunghezza della parola non corretta"
+        return false
+      }
+      else if(!words.includes(this.guess)){
+        this.error ="Parola non nel dizionario"
+        return false;
+      }
+      else{
+        this.error =""
+        return true;
+      }
+      
     },
     sendGuess() {
       if(!this.validateGuess()) { return }
